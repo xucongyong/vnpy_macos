@@ -11,7 +11,7 @@ from vnpy_binance import (
 
 
 from vnpy_ctp import CtpGateway
-# from vnpy_futu import FutuGateway
+from vnpy_futu import FutuGateway
 
 
 
@@ -26,7 +26,7 @@ from vnpy_ctp import CtpGateway
 # from vnpy_tora import ToraStockGateway
 # from vnpy_tora import ToraOptionGateway
 # from vnpy_comstar import ComstarGateway
-# from vnpy_ib import IbGateway
+from vnpy_ib import IbGateway
 
 # from vnpy_tap import TapGateway
 # from vnpy_da import DaGateway
@@ -36,21 +36,21 @@ from vnpy_ctp import CtpGateway
 # from vnpy_hft import GtjaGateway
 
 # from vnpy_paperaccount import PaperAccountApp
-# from vnpy_ctastrategy import CtaStrategyApp
-# from vnpy_ctabacktester import CtaBacktesterApp
-# from vnpy_spreadtrading import SpreadTradingApp
-# from vnpy_algotrading import AlgoTradingApp
-# from vnpy_optionmaster import OptionMasterApp
-# from vnpy_portfoliostrategy import PortfolioStrategyApp
-# from vnpy_scripttrader import ScriptTraderApp
-# from vnpy_chartwizard import ChartWizardApp
-# from vnpy_rpcservice import RpcServiceApp
-# from vnpy_excelrtd import ExcelRtdApp
-# from vnpy_datamanager import DataManagerApp
-# from vnpy_datarecorder import DataRecorderApp
-# from vnpy_riskmanager import RiskManagerApp
-# from vnpy_webtrader import WebTraderApp
-# from vnpy_portfoliomanager import PortfolioManagerApp
+from vnpy_ctastrategy import CtaStrategyApp
+from vnpy_ctabacktester import CtaBacktesterApp
+from vnpy_spreadtrading import SpreadTradingApp
+from vnpy_algotrading import AlgoTradingApp
+from vnpy_optionmaster import OptionMasterApp
+from vnpy_portfoliostrategy import PortfolioStrategyApp
+from vnpy_scripttrader import ScriptTraderApp
+from vnpy_chartwizard import ChartWizardApp
+from vnpy_rpcservice import RpcServiceApp
+from vnpy_excelrtd import ExcelRtdApp
+from vnpy_datamanager import DataManagerApp
+from vnpy_datarecorder import DataRecorderApp
+from vnpy_riskmanager import RiskManagerApp
+from vnpy_webtrader import WebTraderApp
+from vnpy_portfoliomanager import PortfolioManagerApp
 
 
 def main():
@@ -62,7 +62,7 @@ def main():
     main_engine = MainEngine(event_engine)  # 创建主引擎并传入事件引擎
 
     main_engine.add_gateway(CtpGateway) # 添加网关
-    # main_engine.add_gateway(FutuGateway) # 添加网关
+    main_engine.add_gateway(FutuGateway) # 添加网关
     main_engine.add_gateway(BinanceSpotGateway)
     main_engine.add_gateway(BinanceLinearGateway)
     main_engine.add_gateway(BinanceInverseGateway)
@@ -78,7 +78,7 @@ def main():
     # main_engine.add_gateway(ToraOptionGateway)
     # main_engine.add_gateway(OesGateway)
     # main_engine.add_gateway(ComstarGateway)
-    # main_engine.add_gateway(IbGateway)
+    main_engine.add_gateway(IbGateway)
     # main_engine.add_gateway(TapGateway)
     # main_engine.add_gateway(DaGateway)
     # main_engine.add_gateway(RohonGateway)
@@ -88,21 +88,21 @@ def main():
     # main_engine.add_gateway(NhStockGateway)
 
     # main_engine.add_app(PaperAccountApp)
-    # main_engine.add_app(CtaStrategyApp)
-    # main_engine.add_app(CtaBacktesterApp)
-    # main_engine.add_app(SpreadTradingApp)
-    # main_engine.add_app(AlgoTradingApp)
-    # main_engine.add_app(OptionMasterApp)
-    # main_engine.add_app(PortfolioStrategyApp)
-    # main_engine.add_app(ScriptTraderApp)
-    # main_engine.add_app(ChartWizardApp)
-    # main_engine.add_app(RpcServiceApp)
-    # main_engine.add_app(ExcelRtdApp)
-    # main_engine.add_app(DataManagerApp)
-    # main_engine.add_app(DataRecorderApp)
-    # main_engine.add_app(RiskManagerApp)
-    # main_engine.add_app(WebTraderApp)
-    # main_engine.add_app(PortfolioManagerApp)
+    main_engine.add_app(CtaStrategyApp)
+    main_engine.add_app(CtaBacktesterApp)
+    main_engine.add_app(SpreadTradingApp)
+    main_engine.add_app(AlgoTradingApp)
+    main_engine.add_app(OptionMasterApp)
+    main_engine.add_app(PortfolioStrategyApp)
+    main_engine.add_app(ScriptTraderApp)
+    main_engine.add_app(ChartWizardApp)
+    main_engine.add_app(RpcServiceApp)
+    main_engine.add_app(ExcelRtdApp)
+    main_engine.add_app(DataManagerApp)
+    main_engine.add_app(DataRecorderApp)
+    main_engine.add_app(RiskManagerApp)
+    main_engine.add_app(WebTraderApp)
+    main_engine.add_app(PortfolioManagerApp)
     
     main_window = MainWindow(main_engine, event_engine)
     main_window.showMaximized()
